@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server  # Aponta para o Dockerfile do servidor
+    ports:
+      - "5555:5555"  # Porta exposta do servidor
+    networks:
+      - app-network  # Rede compartilhada
+    restart: always  # Reinicia o contêiner automaticamente em caso de falha
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile-client  # Aponta para o Dockerfile do cliente
+    stdin_open: true  # Mantém stdin aberto
+    tty: true  # Aloca um terminal pseudo-TTY
+    networks:
+      - app-network  # Rede compartilhada
+    depends_on:
+      - server  # Garantir que o cliente espera o servidor estar pronto
+    scale: 3  # Quantidade de clientes que deseja escalar (pode alterar conforme necessário)
+    restart: always
+
+networks:
+  app-network:
+    driver: bridge  # Define uma rede bridge para os contêineres se comunicarem
