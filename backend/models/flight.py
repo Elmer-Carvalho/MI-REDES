@@ -8,7 +8,7 @@ class Flight:
         self.origem = origem
         self.destino = destino
         self.empresa_aerea = random.choice(["Gol Transportes Aéreos", "LATAM Airlines Group SA", "Azul Brazilian Airlines"])
-        self.quant_assentos = random.choice(list(range(20, 51, 10)))
+        self.quant_assentos = 6
         self.quant_assentos_disponiveis = self.quant_assentos
         self.codVoo = Flight.gerarCod(self.empresa_aerea)
         self.assentos = {}

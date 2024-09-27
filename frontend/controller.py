@@ -6,6 +6,7 @@ from screens.searchTicketsScreen import searchTicketsScreen
 from screens.ticketsPurchaseScreen import ticketsPurchaseScreen
 from screens.ticketsQueryScreen import ticketsQueryScreen
 
+"""Controller que filtra as telas que serão exibidas"""
 def filterScreens(state: dict) -> dict:
     if state["screen"] == "home":
         return homeScreen()
@@ -27,5 +28,3 @@ def filterScreens(state: dict) -> dict:
 
     if state["screen"] == "displayTicketsForPurchase":
         return ticketsPurchaseScreen(state["server_data"], state["user_data"])
-
-    

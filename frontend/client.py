@@ -13,9 +13,12 @@ if __name__ == "__main__":
 
         state = {"screen": "home"}
         while True:
-            
+
+
+            #FILTRA O ESTADO E DECIDE A TELA 
             new_state = filterScreens(state)
 
+            #CASO HAJA ALGUMA REQUISIÇÃO, ENCAMINHA AO SERVIDOR E RECEBE SEU RETORNO
             if new_state["request"]:
                 client.send(json.dumps(new_state["request"]).encode("utf-8"))
 
@@ -24,6 +27,7 @@ if __name__ == "__main__":
                 server_data = json.loads(response)
 
 
+                # VERIFICA SE O RETORNO FOI POSITIVO
                 if server_data["status"] == "sucess":
                     if server_data["message"]:
                         goodMessage(server_data["message"])
@@ -44,6 +48,7 @@ if __name__ == "__main__":
                     if server_data["message"]:
                         badMessage(server_data["message"])
 
+                    #CASO O LOGIN NÃO SEJA ACEITO, VOLTA A HOME
                     if state["screen"] == "login":
                         state["screen"] = "home"
 

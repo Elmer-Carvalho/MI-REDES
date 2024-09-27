@@ -6,6 +6,7 @@ from validations.validate_shoppingCart import validateShoppingCart
 from validations.validate_ticketDisplay import validateTicketDisplay
 from validations.validate_ticketQuery import validateTicketQuery
 
+"""Filtra as requisições enviadas pelo cliente"""
 def filterRequests(request: dict) -> dict:
     if request["type"] == "register":
         return validateRegistration(request["data_request"])
