@@ -33,6 +33,19 @@ Para lidar com a concorrência, a implementação de Threads permite que o siste
 Essas escolhas tecnológicas e metodológicas visam garantir que o sistema seja capaz de atender a demanda de clientes em tempo real, enquanto mantém a integridade das transações e a fluidez da comunicação entre cliente e servidor.
 
 ## Execução
-### 1.1 Clone o repositório 
+### 1.1 Clone o repositório para sua máquina local 
 ```bash
-    git clone https://github.com/Elmer-Carvalho/MI-REDES.git
+git clone https://github.com/Elmer-Carvalho/MI-REDES.git
+```
+### 2.1 Crie as imagens do projeto através do Docker
+```bash
+docker-compose build
+```
+### 2.2 Inicie o servidor
+```bash
+docker-compose up server
+```
+### 2.3 Inicie quantos clientes desejar
+```bash
+docker-compose run client
+```
