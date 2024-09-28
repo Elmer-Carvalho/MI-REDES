@@ -31,3 +31,7 @@ O sistema desenvolvido para a VendePass utiliza uma arquitetura cliente-servidor
 Para lidar com a concorrência, a implementação de Threads permite que o sistema atenda múltiplas conexões simultaneamente, com um controle rigoroso que limita o acesso a métodos críticos a uma única thread por vez. A busca por trechos disponíveis utiliza o algoritmo de Dijkstra, que é adaptado para considerar a disponibilidade de assentos. Se algum trecho estiver sem vagas, o sistema encontra automaticamente um trecho alternativo.
 
 Essas escolhas tecnológicas e metodológicas visam garantir que o sistema seja capaz de atender a demanda de clientes em tempo real, enquanto mantém a integridade das transações e a fluidez da comunicação entre cliente e servidor.
+
+## Execução
+### 1.1 Clone o repositório 
+git clone https://github.com/Elmer-Carvalho/MI-REDES.git
