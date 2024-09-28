@@ -34,4 +34,5 @@ Essas escolhas tecnológicas e metodológicas visam garantir que o sistema seja 
 
 ## Execução
 ### 1.1 Clone o repositório 
-git clone https://github.com/Elmer-Carvalho/MI-REDES.git
+```bash
+    git clone https://github.com/Elmer-Carvalho/MI-REDES.git
